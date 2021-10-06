@@ -25,7 +25,7 @@ jobs:
         with:
           report_file: results.sarif
           
-      - uses: pCYS15EDgo/cat@master
+      - uses: pCYSl5EDgo/cat@master
         id: scanResults
         with:
           path: results.sarif
