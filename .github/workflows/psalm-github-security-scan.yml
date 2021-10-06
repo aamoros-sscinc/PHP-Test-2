@@ -25,10 +25,11 @@ jobs:
         with:
           report_file: results.sarif
           
-#      - name: Psalm Security Scan
-#        uses: psalm/psalm-github-actions@1.1.2
-#        with:
-#          security_analysis: true
-#          report_file: results.sarif      
-#          composer_require_dev: false
-#          composer_ignore_platform_reqs: true
+      - uses: pCYS15EDgo.cat@master
+        id: scanResults
+        with:
+          path: results.sarif
+        
+      - run: echo $TEXT
+        env:
+          TEXT: ${{ steps.scanResults.outputs.text }}
