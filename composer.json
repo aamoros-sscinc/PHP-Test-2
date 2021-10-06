@@ -1,1 +1,8 @@
-
+{
+  "name:" "vimeo/psalm"
+  "keywords": [
+               "php",
+               "code",
+               "inspection"
+              ]
+}
