@@ -1,0 +1,15 @@
+name: Psalm Security Scan
+on: workflow_dispatch
+
+jobs:
+  psalm:
+    name: Psalm
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Psalm Security Scan
+        uses: docker://ghcr.io/psalm/psalm-security-scan
+        with:
+          report_file: results.sarif
