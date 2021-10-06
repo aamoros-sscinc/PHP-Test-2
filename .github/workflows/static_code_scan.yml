@@ -1,6 +1,16 @@
 name: Psalm Security Scan
-on: workflow_dispatch
-
+on: 
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: true
+        default: 'Mona the Octocat'
+      home:
+        description: 'location'
+        required: false
+        default: 'The Octoverse'
+        
 jobs:
   psalm:
     name: Psalm
@@ -9,7 +19,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         
-      - name: Psalm Security Scan
-        uses: docker://ghcr.io/psalm/psalm-security-scan
+      - name: Psalm Github Security Scan
+        #uses: docker://ghcr.io/psalm/psalm-security-scan  #note, this is psalm-security-scan, just the report_file is the only paramater that it needs
+        uses: psalm/psalm-github-security-scan@1.2.1
         with:
           report_file: results.sarif
+          
+#      - name: Psalm Security Scan
+#        uses: psalm/psalm-github-actions@1.1.2
+#        with:
+#          security_analysis: true
+#          report_file: results.sarif      
+#          composer_require_dev: false
+#          composer_ignore_platform_reqs: true
