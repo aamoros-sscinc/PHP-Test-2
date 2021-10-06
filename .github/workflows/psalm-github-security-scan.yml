@@ -26,7 +26,7 @@ jobs:
           report_file: results.sarif
       
       - name: Cat for GitHub Actions
-      - uses: pCYSl5EDgo/cat@1.0.0
+        uses: pCYSl5EDgo/cat@1.0.0
         id: scanResults
         with:
           path: results.sarif
