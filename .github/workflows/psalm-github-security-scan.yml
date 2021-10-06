@@ -24,8 +24,9 @@ jobs:
         uses: psalm/psalm-github-security-scan@1.2.1
         with:
           report_file: results.sarif
-          
-      - uses: pCYSl5EDgo/cat@master
+      
+      - name: Cat for GitHub Actions
+      - uses: pCYSl5EDgo/cat@1.0.0
         id: scanResults
         with:
           path: results.sarif
