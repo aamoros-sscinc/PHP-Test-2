@@ -17,5 +17,3 @@ jobs:
             git@github.com:aamoros-sscinc/PHP-Test-2.git
           ssh_private_key:                              # <-- use 'secrets' to pass credential information.
             ${{ secrets.SSH_PRIVATE_KEY }}
-          ssh_username:
-            aamoros-sscinc
